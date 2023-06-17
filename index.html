@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final_logica_Sistemas2023</title>
+</head>
+<body>
+    <label for="input1">Input 1:</label>
+    <input type="number" id="input1">
+    <br>
+    <label for="input2">Input 2:</label>
+    <input type="number" id="input2">
+    <br>
+    <label for="input3">Input 3:</label>
+    <input type="number" id="input3">
+    <br>
+    <button onclick="realizarOperacion()">Operación 1</button>
+    <button onclick="realizarOperacion2()">Operación 2</button>
+    <br>
+    <p id="resultado"></p>
+
+    <script>
+        function realizarOperacion() {
+            var input1 = parseInt(document.getElementById("input1").value);
+            var input3 = parseInt(document.getElementById("input3").value);
+            var input2 = parseInt(document.getElementById("input2").value);
+            var resultado = document.getElementById("resultado");
+            
+            if (input1 > input3) {
+                var operacion = "Multiplicación";
+                var resultadoOperacion = input1 * input2 * input3;
+                resultado.textContent = operacion + ": " + resultadoOperacion;
+            } else if (input1 == input2 && input1 <= input3){
+                resultado.textContent = "Los valores de Input 1 y Input 2 son iguales.";
+            } 
+        }
+
+        function realizarOperacion2() {
+            var input1 = parseInt(document.getElementById("input1").value);
+            var input2 = parseInt(document.getElementById("input2").value);
+            var input3 = parseInt(document.getElementById("input3").value);
+            var resultado = document.getElementById("resultado");
+
+            var concatenacion = "";
+            var multiplicacion = input1 * input2;
+            var suma = input3;
+            
+            for (var i = 0; i < multiplicacion; i++) {
+                concatenacion += input1 + input2 + input3;
+            }
+
+            resultado.textContent = concatenacion;
+        }
+    </script>
+</body>
+</html>
